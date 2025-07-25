@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Load data
+# Load data sets from the csv file
 @st.cache_data
 def load_data():
     df = pd.read_csv("cleaned_merged_data.csv", parse_dates=["date"])
@@ -13,7 +13,7 @@ df = load_data()
 st.title("🦠 COVID-19 Case Prediction Dashboard")
 st.markdown("Analyze how web interactions relate to COVID case surges.")
 
-# Show raw data
+# showcases the raw data
 with st.expander("See raw data"):
     st.dataframe(df)
 
@@ -25,7 +25,7 @@ st.plotly_chart(fig)
 # Select a metric
 metric = st.selectbox("Choose a Web Interaction Metric", df.columns.drop(['date', 'cases']))
 
-# Correlation
+# Correlation between the cases and the metric
 corr = df['cases'].corr(df[metric])
 st.metric(label=f"Correlation with Cases", value=f"{corr:.2f}")
 
