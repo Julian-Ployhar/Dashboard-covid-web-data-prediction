@@ -13,7 +13,7 @@
             "type": "browse-lite",
             "request": "launch",
             "name": "Browse Lite: Launch",
-            "url": "http://localhost:3000"
+            "url": "http://localhost:9222"
         }
     ]
 }
