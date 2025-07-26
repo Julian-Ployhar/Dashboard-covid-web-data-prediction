@@ -1,0 +1,24 @@
+{
+  "data-validation-settings": {
+    "input-file-validation": {
+      "required-columns": ["date", "cases"],
+      "date-format": "YYYY-MM-DD",
+      "min-row-count": 10
+    },
+    "web-metrics-validation": {
+      "required-columns": ["date", "page_views", "unique_visitors"],
+      "numeric-columns": ["page_views", "unique_visitors", "search_queries"],
+      "min-row-count": 10
+    }
+  },
+  "processing-settings": {
+    "standardization-method": "z-score",
+    "missing-data-handling": "drop",
+    "output-format": "csv"
+  },
+  "dashboard-settings": {
+    "default-port": 8501,
+    "auto-open-browser": true,
+    "cache-enabled": true
+  }
+} 
